@@ -17,7 +17,8 @@ Created table using the following commands :
 rails generate model Company name:string email:string password_digest:string
 rails generate model FiscalYear year:integer company:references
 rails generate model MonthlyReport month:integer fiscal_year:references
-rails generate model ExpenseRevenue category:string amount:decimal monthly_report:references
+rails generate model Category name:string
+rails generate model ExpenseRevenue amount:decimal category:references monthly_report:references
 
 
 
