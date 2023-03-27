@@ -19,13 +19,13 @@ rails generate model FiscalYear year:integer company:references
 rails generate model MonthlyReport month:integer fiscal_year:references
 rails generate model Category name:string
 rails generate model ExpenseRevenue amount:decimal category:references monthly_report:references
-
-
-
 ```
 
 
 * Database initialization
+
+* Generating Controllers
+Either manually or `rails generate controller ExpenseRevenues --no-helper --no-assets --no-controller-specs --no-view-specs --no-tests`
 
 * How to run the test suite
 

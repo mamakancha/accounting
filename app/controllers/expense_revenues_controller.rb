@@ -1,0 +1,2 @@
+class ExpenseRevenuesController < ApplicationController
+end
