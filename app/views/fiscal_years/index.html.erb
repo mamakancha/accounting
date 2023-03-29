@@ -1,0 +1,7 @@
+<h1>Fiscal Years</h1>
+
+<% @fiscal_years.each do |fiscal_year| %>
+  <div>
+    <%= link_to fiscal_year.year, company_fiscal_year_monthly_reports_path(@company, fiscal_year) %>
+  </div>
+<% end %>

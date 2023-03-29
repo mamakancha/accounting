@@ -12,5 +12,12 @@
 
   <body>
     <%= yield %>
+    <% if session[:company_id] %>
+      Logged in as: <%= Company.find(session[:company_id]).name %>
+      <%= link_to "Logout", logout_path, method: :delete %>
+    <% else %>
+      <%= link_to "Login", login_path %>
+    <% end %>
+
   </body>
 </html>

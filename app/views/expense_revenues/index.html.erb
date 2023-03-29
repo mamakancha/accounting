@@ -1,0 +1,7 @@
+<h1>Expense Revenues</h1>
+
+<% @expense_revenues.each do |expense_revenue| %>
+  <div>
+    <%= expense_revenue.category.name %>: <%= number_to_currency(expense_revenue.amount) %>
+  </div>
+<% end %>

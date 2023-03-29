@@ -1,0 +1,18 @@
+<h1>Monthly Reports for <%= @fiscal_year.year %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @monthly_reports.each do |monthly_report| %>
+      <tr>
+        <td><%= Date::MONTHNAMES[monthly_report.month] %></td>
+        <td><%= link_to 'View Details', monthly_report_expense_revenues_path(monthly_report) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
