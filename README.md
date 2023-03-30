@@ -25,7 +25,6 @@ rails generate model ExpenseRevenue amount:decimal category:references monthly_r
 * Database initialization
 
 * Generating Controllers
-Either manually or `rails generate controller ExpenseRevenues --no-helper --no-assets --no-controller-specs --no-view-specs --no-tests`
 
 * How to run the test suite
 
