@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
  
+  root 'fiscal_years#index'
   # Custom route for logging in
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'

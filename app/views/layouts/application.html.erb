@@ -11,13 +11,30 @@
   </head>
 
   <body>
-    <%= yield %>
-    <% if session[:company_id] %>
-      Logged in as: <%= Company.find(session[:company_id]).name %>
-      <%= link_to "Logout", logout_path, method: :delete %>
-    <% else %>
-      <%= link_to "Login", login_path %>
-    <% end %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="#">Accounting</a>
+        <div class="collapse navbar-collapse">
+          <ul class="navbar-nav ms-auto">
+            <% if session[:company_id] %>
+              <li class="nav-item">
+                <span class="nav-link">Logged in as: <%= Company.find(session[:company_id]).name %></span>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", logout_path, method: :delete, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "Login", login_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>

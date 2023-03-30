@@ -1,7 +1,20 @@
-<h1>Expense Revenues</h1>
+<div class="container">
+  <h1>Expense Revenues for <%= Date::MONTHNAMES[@monthly_report.month] %> <%= @fiscal_year.year %></h1>
 
-<% @expense_revenues.each do |expense_revenue| %>
-  <div>
-    <%= expense_revenue.category.name %>: <%= number_to_currency(expense_revenue.amount) %>
-  </div>
-<% end %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @expense_revenues.each do |expense_revenue| %>
+        <tr>
+          <td><%= expense_revenue.category.name %></td>
+          <td><%= number_to_currency(expense_revenue.amount) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

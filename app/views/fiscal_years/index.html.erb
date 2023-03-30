@@ -1,7 +1,21 @@
-<h1>Fiscal Years</h1>
-
-<% @fiscal_years.each do |fiscal_year| %>
-  <div>
-    <%= link_to fiscal_year.year, company_fiscal_year_monthly_reports_path(@company, fiscal_year) %>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1 class="text-center">Fiscal Years</h1>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Year</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @fiscal_years.each do |fiscal_year| %>
+          <tr>
+            <td><%= fiscal_year.year %></td>
+            <td><%= link_to 'View Monthly Reports', company_fiscal_year_monthly_reports_path(@company, fiscal_year) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-<% end %>
+</div>

@@ -9,8 +9,9 @@ class FiscalYearsController < ApplicationController
     private
   
     def set_company
-      @company = Company.find(params[:company_id])
+      @company = Company.find(session[:company_id])
     end
+    
 
     def require_login
         unless session[:company_id]

@@ -1,18 +1,20 @@
-<h1>Monthly Reports for <%= @fiscal_year.year %></h1>
+<div class="container">
+  <h1>Monthly Reports for <%= @fiscal_year.year %></h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Month</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @monthly_reports.each do |monthly_report| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= Date::MONTHNAMES[monthly_report.month] %></td>
-        <td><%= link_to 'View Details', monthly_report_expense_revenues_path(monthly_report) %></td>
+        <th scope="col">Month</th>
+        <th scope="col">Action</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @monthly_reports.each do |monthly_report| %>
+        <tr>
+          <td><%= Date::MONTHNAMES[monthly_report.month] %></td>
+          <td><%= link_to 'View Details', monthly_report_expense_revenues_path(monthly_report, fiscal_year: @fiscal_year), class: "btn btn-primary" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
